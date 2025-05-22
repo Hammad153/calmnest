@@ -1,3 +1,4 @@
+import React from "react";
 import { Modal, Pressable, View, Text, StyleSheet } from "react-native";
 import { PropsWithChildren } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
