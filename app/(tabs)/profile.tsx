@@ -1,11 +1,11 @@
 import React from "react";
-import HomeScreen from "@/screens/home";
+import ProfileScreen from "@/screens/profile";
 import { View } from "react-native";
 
 export default function Index() {
   return (
     <View>
-      <HomeScreen />
+      <ProfileScreen />
     </View>
   );
 }

@@ -1,50 +1,94 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# CalmNest - Full App Development Guide
 
-## Get started
+This document outlines a step-by-step guide to developing **CalmNest**, a wellness-focused mobile app aimed at helping users sleep better, relax, and feel emotionally supported. It includes all phases from setup to deployment.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🗓️ Project Schedule Summary
 
-2. Start the app
+- **Week 1–2**: Project setup, UI, navigation
+- **Week 3–4**: Sleep sounds & journaling
+- **Week 5**: Breathing, scan, comfort notes
+- **Week 6**: Notifications, personalization
+- **Week 7**: Gamification, mood tracker
+- **Week 8**: AI storytelling, polish
+- **Week 9**: Backend integration, deployment
 
-   ```bash
-    npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 📆 Weekly Development Plan
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Week 1–2: Project Setup & UI Foundation
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Install Expo CLI and create the app using `npx create-expo-app calmnest`
+- Install NativeWind and React Navigation packages
+- Setup folder structure and Tailwind CSS
+- Create navigation flow between screens
 
-## Get a fresh project
+### Week 3–4: Core Features (Sleep Sounds & Journal)
 
-When you're ready, run:
+- Integrate Expo Audio API for sound playback
+- Create mix & match sound UI
+- Build daily journal UI with prompts
+- Connect sentiment analysis via OpenAI API
 
-```bash
-npm run reset-project
+### Week 5: Breathing, Body Scan & Comfort Notes
+
+- Add breathing exercise visuals
+- Develop body scan audio with timer
+- Create developer comfort notes with scheduling
+
+### Week 6: Notifications & Personalization
+
+- Implement Expo Notifications for bedtime reminders
+- Add customizable themes using AsyncStorage
+
+### Week 7: Gamification & Mood Tracking
+
+- Track completed sessions and reward points
+- Build mood tracker and charting with `react-native-chart-kit`
+
+### Week 8: AI Stories & Final Touches
+
+- Use OpenAI API to generate stories
+- Add Text-to-Speech using `expo-speech`
+- Polish UI and animations
+
+### Week 9: Authentication, Backend & Deployment
+
+- Integrate Firebase Auth, Firestore, and Cloud Functions
+- Build and test for Android/iOS with `npx expo build`
+- Publish to app stores
+
+---
+
+## 🛠️ Tools & Dependencies Overview
+
+- **Frontend**: React Native, Expo, NativeWind
+- **Backend**: Firebase / Supabase
+- **AI/NLP**: OpenAI / HuggingFace API, Expo Speech
+- **Audio**: Expo Audio API / `react-native-sound`
+- **Storage**: Firestore, AsyncStorage, Secure Store
+- **State Mgmt**: Context API, Zustand / Redux
+- **Charts**: `react-native-chart-kit`
+- **Notifications**: Expo Notifications
+
+---
+
+## 🔐 Suggested Firebase Firestore Structure
+
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+users/
+  {userId}/
+    journal/
+      {entryId}
+    comfortNotes/
+      {noteId}
+    sleepMixes/
+      {mixId}
+    moods/
+      {date}
+    goals/
+      {goalId}
+```
