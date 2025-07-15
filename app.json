@@ -37,7 +37,12 @@
         }
       ],
       "expo-web-browser",
-      "expo-audio"
+      "expo-audio",
+      ["expo-image-picker",
+        {
+          "photosPermission": "Allow calmnest to access your photos"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

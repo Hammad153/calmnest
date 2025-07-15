@@ -1,6 +1,8 @@
 import React from "react";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from '@expo/vector-icons';
+
 import "../../global.css";
 
 export default function TabLayout() {
@@ -47,6 +49,19 @@ export default function TabLayout() {
         name="reflect"
         options={{
           title: "Reflect",
+          tabBarIcon: ({ color, focused }) => (      
+            <FontAwesome5
+              name={"brain"}
+              color={color}
+              size={22}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="journal"
+        options={{
+          title: "Journal",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "book" : "book-outline"}

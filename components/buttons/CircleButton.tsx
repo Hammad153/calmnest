@@ -1,17 +1,21 @@
 import React from "react";
 import { View, Pressable } from "react-native";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
-type Props = {
-  onPress: () => void;
+interface Props {
+  onPress?: () => void;
+  icon?: React.ReactNode
+  className?: string
+  children? : React.ReactNode
 };
 
-export default function CircleButton({ onPress }: Props) {
+ const CircleButton: React.FC<Props> = ({ onPress, icon, className, children }: Props) => {
   return (
-    <View>
-      <Pressable onPress={onPress}>
-        <MaterialIcons name="add" size={38} color="#25292e" />
+    <View className={``}>
+      <Pressable onPress={onPress} className={`${className} rounded-full`}>
+        {children}
       </Pressable>
     </View>
   );
 }
+
+export default CircleButton
