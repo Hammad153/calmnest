@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { useAudioPlayer } from 'expo-audio';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
+import Feather from '@expo/vector-icons/Feather';
 
 interface Iprops {
     audioSource: string;
@@ -10,6 +11,7 @@ interface Iprops {
 const AudioPlayer: React.FC<Iprops> = ({ audioSource }) => {
     const player = useAudioPlayer(audioSource);
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const [volume, setVolume] = useState(1.0); 
 
     const togglePlayPause = () => {
         if (isPlaying) {
@@ -21,8 +23,12 @@ const AudioPlayer: React.FC<Iprops> = ({ audioSource }) => {
         }
     };
 
+    const handleVolume = () => {
+        console.log('Volume settings')
+    }
+
     return (
-        <View>
+        <View className='flex flex-row gap-4 flex-end mr-3'>
             <TouchableOpacity onPress={togglePlayPause}>
                 <SimpleLineIcons
                     name={isPlaying ? 'control-pause' : 'control-play'}
@@ -30,6 +36,13 @@ const AudioPlayer: React.FC<Iprops> = ({ audioSource }) => {
                     color="#7BAACF"
                 />
             </TouchableOpacity>
+             <TouchableOpacity onPress={() => handleVolume()}>
+                    <Feather
+                        name="volume-2"
+                        size={24}
+                        color="#7BAACF"
+                    />
+                </TouchableOpacity>
         </View>
     );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import SoundColumn from "./SoundColumn";
+import SoundColumn from "../components/SoundColumn";
 
 export default function Sounds() {
 

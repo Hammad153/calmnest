@@ -1,8 +1,7 @@
 import React from 'react';
-import { TextInput } from 'react-native-paper';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 
-const SleepJorunal = () => {
+const SleepJournal = () => {
     const [text, setText] = React.useState("");
   return (
     <>
@@ -10,10 +9,10 @@ const SleepJorunal = () => {
         <Text className="text-3xl font-bold p-4 ml-3 text-primary">Sleep Journal</Text>
         <View className="mb-3 mx-6">
           <TextInput
-          label="Write a journal entry"
-          value={text}
-            onChangeText={text => setText(text)}
-            mode="outlined"
+            multiline
+            numberOfLines={2}
+            placeholder="Write something about your rest..."
+            className="border border-gray-300 rounded-xl p-4 text-base"
           />
            <TouchableOpacity
                 onPress={() => {
@@ -29,4 +28,4 @@ const SleepJorunal = () => {
   );
 }
 
-export default SleepJorunal;
+export default SleepJournal;

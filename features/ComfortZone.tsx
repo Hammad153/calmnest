@@ -24,7 +24,7 @@ const ComfortZone = () => {
   }
   return (
     <>
-       <View className="border-2 border-primary m-4 rounded-lg h-auto">
+      <View className="border-2 border-primary rounded-2xl p-4 bg-white shadow-sm">
         <Text className="text-3xl font-bold p-4 ml-3 text-primary">Comfort Note</Text>
         <View>
             <Text className='text-3xl p-4 ml-3 text-primary'>

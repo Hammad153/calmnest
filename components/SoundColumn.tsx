@@ -30,14 +30,6 @@ const SoundColumn: React.FC<Iprops> = ({
             </View>
             <View className="flex flex-row gap-4 flex-end mr-3">
                 <AudioPlayer audioSource={audioSource} />
-                <TouchableOpacity>
-                    <Feather
-                        name="volume-2"
-                        size={24}
-                        color="#7BAACF"
-                    />
-                </TouchableOpacity>
-               
             </View>
         </View>
     )
