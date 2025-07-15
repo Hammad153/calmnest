@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Pressable, ImageBackground } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import ApHeader from "@/components/Header";
 import { ProgressBar } from "react-native-paper";
 import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
@@ -13,7 +13,7 @@ export default function RelaxScreen() {
   };
 
   return (
-    <View className="bg-white">
+    <View className="bg-white h-screen">
       <ApHeader title="Relaxation" hasBackButton />
 
       <LinearGradient

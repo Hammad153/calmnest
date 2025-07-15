@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 
 const SleepJournal = () => {
-    const [text, setText] = React.useState("");
+    const [text, setText] = useState("");
   return (
     <>
        <View className="border-2 border-primary m-4 rounded-lg">
@@ -16,7 +16,7 @@ const SleepJournal = () => {
           />
            <TouchableOpacity
                 onPress={() => {
-                  console.log({ });
+                  console.log({});
                 }}
                 className="bg-primary py-3 rounded-3xl items-center w-5/6 mx-auto mt-2"
             >

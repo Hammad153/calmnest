@@ -5,13 +5,19 @@ interface Props {
   onPress?: () => void;
   icon?: React.ReactNode
   className?: string
-  children? : React.ReactNode
+  children?: React.ReactNode,
+  onLongPress? : () => void
 };
 
- const CircleButton: React.FC<Props> = ({ onPress, icon, className, children }: Props) => {
+const CircleButton: React.FC<Props> = ({
+  onPress, icon, className, children, onLongPress }: Props) => {
   return (
     <View className={``}>
-      <Pressable onPress={onPress} className={`${className} rounded-full`}>
+      <Pressable
+        onPress={onPress}
+        onLongPress={onLongPress}
+        className={`${className} rounded-full`}
+      >
         {children}
       </Pressable>
     </View>
