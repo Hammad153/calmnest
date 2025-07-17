@@ -30,7 +30,7 @@ const SoundColumn: React.FC<Iprops> = ({
                 </Text>
             </View>
             <View className="flex flex-row gap-4 flex-end mr-3">
-                <AudioPlayer audioSource={audioSource} />
+                <AudioPlayer audioSource={audioSource} render="home"/>
             </View>
         </View>
     )

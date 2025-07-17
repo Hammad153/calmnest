@@ -4,9 +4,12 @@ import ApHeader from "@/components/Header";
 import { ProgressBar } from "react-native-paper";
 import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
 import { LinearGradient } from "expo-linear-gradient";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export default function RelaxScreen() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  const audioSource = require("@/assets/audio/mixkit-sea-waves-with-birds-loop.mp3");
 
   const togglePlayPause = () => {
     setIsPlaying((prev) => !prev);
@@ -25,7 +28,7 @@ export default function RelaxScreen() {
         className=" px-4 pb-8"
       >
 
-        <View className="my-14 flex items-center">
+        {/* <View className="my-14 flex items-center">
           <View className="w-48 h-48 rounded-full border-2 border-primary bg-white shadow-md flex items-center justify-center">
             <Pressable onPress={togglePlayPause}>
               {isPlaying ? (
@@ -47,7 +50,10 @@ export default function RelaxScreen() {
           <Text className="mt-4 text-xl text-primary font-semibold">
             {isPlaying ? "Now Playing" : "Tap to Play"}
           </Text>
-        </View>
+        </View> */}
+          <View>
+            <AudioPlayer audioSource={audioSource} render="relax"/>
+          </View>
 
         <View className="mb-10 px-6">
           <ProgressBar
