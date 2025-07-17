@@ -23,6 +23,7 @@ const SoundColumn: React.FC<Iprops> = ({
                     onPress={() => {
                         setChecked(!checked);
                     }}
+                    color="#7BAACF"
                 />
                 <Text className="text-2xl text-primary">
                     {title}

@@ -24,7 +24,7 @@ const EditProfileScreen = () => {
   };
 
   return (
-    <ScrollView className=" bg-white">
+    <ScrollView className=" bg-white h-screen">
       <ApHeader title='Edit Profile' hasBackButton />
 
       <View className="flex items-center mt-10">

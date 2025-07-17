@@ -15,11 +15,14 @@ export default function ReflectScreen() {
   ];
 
   return (
-    <ScrollView className="bg-[#F8FAF9] px-4 pt-4">
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      className="bg-[#F8FAF9] px-4 pt-4"
+    >
       <ApHeader hasBackButton title="Reflect" />
 
       <View className="mt-4 mb-6 p-4 rounded-2xl bg-[#E0F2F1]">
-        <Text className="text-center text-lg italic text-[#004D40]">
+        <Text className="text-center text-lg italic text-sky-600">
           "Today I choose peace over perfection."
         </Text>
       </View>

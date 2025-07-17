@@ -26,7 +26,10 @@ export default function ProfileScreen() {
   };
 
   return (
-    <ScrollView className="bg-white h-screen">
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      className="bg-white h-screen"
+    >
       <ApHeader hasBackButton title="Profile" />
 
        <LinearGradient

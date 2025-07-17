@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import ApHeader from '@/components/Header';
 import Button from '@/components/buttons/Button';
@@ -27,10 +27,14 @@ const JournalScreen: React.FC = () => {
   };
 
     return (
-    <View className=" bg-white">
-      <ApHeader hasBackButton title="Sleep Journal" />
+    <View className=" bg-white h-screen">
+        <ApHeader hasBackButton title="Sleep Journal" />
+        
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+        >
 
-      <View className="px-6 py-4 space-y-12 flex flex-col gap-4">
+      <View className="px-6 py-4 space-y-4 flex flex-col gap-4">
         <TextInput
           label="🕰️ Bedtime"
           value={entry.bedtime}
@@ -95,7 +99,8 @@ const JournalScreen: React.FC = () => {
           labelClassname="text-xl"
           onPress={handleSave}
         />
-      </View>
+          </View>
+          </ScrollView>
     </View>
   );
 };
