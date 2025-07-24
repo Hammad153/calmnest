@@ -1,7 +1,6 @@
 import React, {useState} from "react"
-import { View, Text, TouchableOpacity } from "react-native"
+import { View, Text } from "react-native"
 import { Checkbox } from 'react-native-paper';
-import Feather from '@expo/vector-icons/Feather';
 import AudioPlayer from "@/components/AudioPlayer";
 
 interface Iprops {
