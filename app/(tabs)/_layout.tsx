@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5 } from "@expo/vector-icons";
 
 import "../../global.css";
 
@@ -9,7 +9,6 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        // tabBarActiveTintColor: "#ffd33d",
         headerStyle: {
           backgroundColor: "#2C3E50",
         },
@@ -18,7 +17,8 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: "#2C3E50",
         },
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -49,12 +49,8 @@ export default function TabLayout() {
         name="reflect"
         options={{
           title: "Reflect",
-          tabBarIcon: ({ color, focused }) => (      
-            <FontAwesome5
-              name={"brain"}
-              color={color}
-              size={22}
-            />
+          tabBarIcon: ({ color, focused }) => (
+            <FontAwesome5 name={"brain"} color={color} size={22} />
           ),
         }}
       />

@@ -1,5 +1,13 @@
-import React, { useState, useRef } from 'react';
-import { View, Text, Pressable, Animated, Easing, Vibration, ToastAndroid } from 'react-native';
+import React, { useState, useRef } from "react";
+import {
+  View,
+  Text,
+  Pressable,
+  Animated,
+  Easing,
+  Vibration,
+  ToastAndroid,
+} from "react-native";
 
 const GuidedBreathing = () => {
   const [holdCount, setHoldCount] = useState<number>(0);
@@ -28,48 +36,53 @@ const GuidedBreathing = () => {
   let rating: string;
 
   if (holdCount >= 30) {
-    rating = 'Welldone you are doing great'
+    rating = "Welldone you are doing great";
   } else if (holdCount <= 30) {
-    rating = 'Try and keep to your guided breath'
+    rating = "Try and keep to your guided breath";
   }
 
-    const showToast = () => {
-     ToastAndroid.show(`You Hold breath for ${holdCount} secs, ${rating}`, ToastAndroid.SHORT);
-    };
+  const showToast = () => {
+    ToastAndroid.show(
+      `You Hold breath for ${holdCount} secs, ${rating}`,
+      ToastAndroid.SHORT
+    );
+  };
 
-    const stopPulse = () => {
-      scaleAnim.stopAnimation();
-      scaleAnim.setValue(1);
-    };
+  const stopPulse = () => {
+    scaleAnim.stopAnimation();
+    scaleAnim.setValue(1);
+  };
 
-    const startHold = () => {
-      if (intervalRef.current) return;
+  const startHold = () => {
+    if (intervalRef.current) return;
 
-      Vibration.vibrate(50);
-      startPulse();
+    Vibration.vibrate(50);
+    startPulse();
 
-      intervalRef.current = setInterval(() => {
-        setHoldCount(prev => prev + 1);
-      }, 1000);
-    };
+    intervalRef.current = setInterval(() => {
+      setHoldCount((prev) => prev + 1);
+    }, 1000);
+  };
 
-    const stopHold = () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-      stopPulse();
-      showToast();
-      setHoldCount(0);
-    };
+  const stopHold = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    stopPulse();
+    showToast();
+    setHoldCount(0);
+  };
 
-    const resetHold = () => {
-      setHoldCount(0);
-    };
+  const resetHold = () => {
+    setHoldCount(0);
+  };
 
   return (
     <View className="border-2 border-primary m-4 rounded-lg">
-      <Text className="text-3xl font-bold p-3 ml-3 text-primary">Guided Breathing</Text>
+      <Text className="text-3xl font-bold p-3 ml-3 text-primary">
+        Guided Breathing
+      </Text>
 
       <View className="mb-3 mx-6">
         <Text className="shadow-md bg-primary text-xl w-auto self-center p-2 rounded-3xl text-white absolute right-4 top-[-12]">
@@ -88,15 +101,6 @@ const GuidedBreathing = () => {
             />
           </Pressable>
         </View>
-
-        {/* <View className="items-start">
-          <Pressable
-            onPress={resetHold}
-            className="mt-[-10] px-4 py-2"
-          >
-            <Text className="bg-primary text-white text-sm py-2 px-4 rounded-md">Reset</Text>
-          </Pressable>
-        </View> */}
       </View>
     </View>
   );

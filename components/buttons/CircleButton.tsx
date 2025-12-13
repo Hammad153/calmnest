@@ -3,14 +3,18 @@ import { View, Pressable } from "react-native";
 
 interface Props {
   onPress?: () => void;
-  icon?: React.ReactNode
-  className?: string
-  children?: React.ReactNode,
-  onLongPress? : () => void
-};
+  icon?: React.ReactNode;
+  className?: string;
+  children?: React.ReactNode;
+  onLongPress?: () => void;
+}
 
 const CircleButton: React.FC<Props> = ({
-  onPress, icon, className, children, onLongPress }: Props) => {
+  onPress,
+  className,
+  children,
+  onLongPress,
+}: Props) => {
   return (
     <View className={``}>
       <Pressable
@@ -22,6 +26,6 @@ const CircleButton: React.FC<Props> = ({
       </Pressable>
     </View>
   );
-}
+};
 
-export default CircleButton
+export default CircleButton;

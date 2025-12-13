@@ -37,7 +37,8 @@
         }
       ],
       "expo-web-browser",
-      ["expo-image-picker",
+      [
+        "expo-image-picker",
         {
           "photosPermission": "Allow calmnest to access your photos"
         }

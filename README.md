@@ -1,7 +1,6 @@
+# calmnest - Full App Development Guide
 
-# CalmNest - Full App Development Guide
-
-This document outlines a step-by-step guide to developing **CalmNest**, a wellness-focused mobile app aimed at helping users sleep better, relax, and feel emotionally supported. It includes all phases from setup to deployment.
+This document outlines a step-by-step guide to developing **calmnest**, a wellness-focused mobile app aimed at helping users sleep better, relax, and feel emotionally supported. It includes all phases from setup to deployment.
 
 ---
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Pressable, TouchableOpacity, Text } from "react-native";
+import { View, Pressable, Text } from "react-native";
 
 type Props = {
   label: string;
@@ -9,14 +9,18 @@ type Props = {
   containerClassName?: string;
 };
 
-export default function Button({ label, onPress, className, labelClassname }: Props) {
+export default function Button({
+  label,
+  onPress,
+  className,
+  labelClassname,
+}: Props) {
   return (
     <View className={`${className} p-2 w-[200px] bg-primary my-2 rounded-lg`}>
-      <Pressable
-        onPress={onPress}
-        className={`items-center justify-center`}
-      >
-        <Text className={`text-white text-center text-2xl ${labelClassname}`}>{label}</Text>
+      <Pressable onPress={onPress} className={`items-center justify-center`}>
+        <Text className={`text-white text-center text-2xl ${labelClassname}`}>
+          {label}
+        </Text>
       </Pressable>
     </View>
   );
