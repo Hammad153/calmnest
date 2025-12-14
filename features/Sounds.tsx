@@ -4,7 +4,7 @@ import SoundColumn from "../components/SoundColumn";
 
 export default function Sounds() {
   return (
-    <View>
+    <View className="w-full">
       <SoundColumn title="Rain on window" />
       <SoundColumn title="Ocean waves" />
       <SoundColumn title="Fireplace" />

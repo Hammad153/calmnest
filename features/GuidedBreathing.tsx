@@ -11,8 +11,8 @@ import {
 
 const GuidedBreathing = () => {
   const [holdCount, setHoldCount] = useState<number>(0);
-  const intervalRef = useRef<NodeJS.Timeout | null | number>(null);
   const scaleAnim = useRef(new Animated.Value(1)).current;
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startPulse = () => {
     Animated.loop(
@@ -79,16 +79,17 @@ const GuidedBreathing = () => {
   };
 
   return (
-    <View className="border-2 border-primary m-4 rounded-lg">
-      <Text className="text-3xl font-bold p-3 ml-3 text-primary">
-        Guided Breathing
-      </Text>
-
-      <View className="mb-3 mx-6">
-        <Text className="shadow-md bg-primary text-xl w-auto self-center p-2 rounded-3xl text-white absolute right-4 top-[-12]">
+    <View className="w-full border-2 border-primary rounded-lg px-4 py-3">
+      <View className="flex flex-row items-center justify-between mb-2">
+        <Text className="text-3xl font-bold text-primary">
+          Guided Breathing
+        </Text>
+        <Text className="shadow-md bg-primary text-xl self-center p-2 rounded-3xl text-white">
           {holdCount}
         </Text>
+      </View>
 
+      <View className="mb-3">
         <View className="items-center mt-4 mb-4 flex flex-row justify-center gap-4">
           <Pressable
             onPressIn={startHold}

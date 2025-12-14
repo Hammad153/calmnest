@@ -32,9 +32,13 @@ export default function HomeScreen() {
             <Sounds />
           </View>
 
-          <GuidedBreathing />
+          <View className="my-1">
+            <GuidedBreathing />
+          </View>
 
-          <SleepJournal />
+          <View className="my-1">
+            <SleepJournal />
+          </View>
 
           <ComfortZone />
         </ScrollView>
