@@ -21,13 +21,15 @@ const ApHeader: React.FC<Iprops> = ({ icon, title, hasBackButton }) => {
       {hasBackButton && (
         <AntDesign
           name="arrow-left"
-          size={30}
+          size={28}
           color="#7BAACF"
           className="absolute left-2 pl-4"
           onPress={handleBack}
         />
       )}
-      <Text className="text-3xl font-bold text-primary">{title}</Text>
+      <Text className="text-2xl md:text-4xl font-bold text-primary">
+        {title}
+      </Text>
     </View>
   );
 };
